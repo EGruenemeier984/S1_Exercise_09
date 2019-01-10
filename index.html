@@ -59,26 +59,51 @@
     <form id="survey" action="http://www.example.com/redball/survey" method="POST" enctype="">
         <fieldset id="custInfo">
             <legend>Customer Information</legend>
-            <label for="name">Name*</label>
-            <input type="text" name="custName" id="name" placeholder="first and last name" />
+            <div class="formRow">
+                <label for="name">Name*</label>
+                <input type="text" name="custName" id="name" placeholder="first and last name" required />
+            </div>
 
-            <label for="street">Street Address</label>
-            <input type="text" name="custStreet" id="street" />
+            <div class="formRow">
+                <label for="street">Street Address</label>
+                <input type="text" name="custStreet" id="street" />
+            </div>
 
-            <label for="city">City</label>
-            <input type="text" name="custCity" id="city" value="Ormond Beach" />
+            <div class="formRow">
+                <label for="city">City</label>
+                <input type="text" name="custCity" id="city" value="Ormond Beach" />
+            </div>
 
-            <label for="state">State</label>
-            <input type="text" name="custState" id="state" value="FL" />
+            <div class="formRow">
+                <label for="state">State</label>
+                <input type="text" name="custState" id="state" value="FL" />
+            </div>
 
-            <label for="zip">Zip code</label>
-            <input type="text" name="custZip" id="zip" placeholder="nnnnn (-nnnn)" />
+            <div class="formRow">
+                <label for="zip">Zip code</label>
+                <input type="text" name="custZip" id="zip" placeholder="nnnnn (-nnnn)" />
+            </div>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" name="custPhone" id="phone" placeholder="(nnn) nnn-nnnn" />
+            <div class="formRow">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="custPhone" id="phone" placeholder="(nnn) nnn-nnnn" />
+            </div>
 
-            <label for="email">E-mail</label>
-            <input type="email" name="custEmail" id="email" />
+            <div class="formRow">
+                <label for="email">E-mail</label>
+                <input type="email" name="custEmail" id="email" required />
+            </div>
+
+            <div class="formRow">
+                <label for="info">Where did you hear about us? <br /> (select all that apply)</label>
+                <select name="infoSrc" id="info" size="5" multiple>
+                    <option value="internet">Internet</option>
+                    <option value="mag">Magazine</option>
+                    <option value="news">Newspapper</option>
+                    <option value="word">Word of Mouth</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
 
             <div class="formRow">
                 <label for="dish">What's your favorite dish?</label>
@@ -122,7 +147,7 @@
             </div>
 
             <div class="formRow">
-                <label>Was your servie friendly?</label>
+                <label>Was your service friendly?</label>
                 <fieldset class="optGroup">
                     <label for="fYes">Yes</label>
                     <input type="radio" name="sFriend" id="fYes" value="yes" />
@@ -154,7 +179,7 @@
             <div class="formRow">
                 <label for="rangeBox">Rate the overall service. <br /> (0=poor; 10=great)</label>
                 0
-                <input type="number" name="serviceRate" id="rangeBox" type="range" value="5" step="1" min="0" max="10" />
+                <input type="range" name="serviceRate" id="rangeBox" type="range" value="5" step="1" min="0" max="10" />
                 10
             </div>
 
@@ -162,6 +187,11 @@
             <textarea name="custExp" id="commBox"></textarea>
 
         </fieldset>
+
+        <div id="buttons">
+            <input type="submit" value="Submit My Survey" />
+            <input type="reset" value="Cancel" />
+        </div>
     </form>
 
     <footer>
